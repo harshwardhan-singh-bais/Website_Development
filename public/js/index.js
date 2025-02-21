@@ -81,47 +81,6 @@ const infiniteScroll = () => {
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", drag);
 carousel.addEventListener("mouseup", dragStop);
-<<<<<<< HEAD
-carousel.addEventListener("scroll", infiniteScroll)
-
-document.addEventListener("DOMContentLoaded", () => {
-    const hoverItems = document.querySelectorAll(".hover-item");
-    const displayImage = document.getElementById("display-image");
-    const loadingLineImage = document.querySelector(".loading-line-image");
-
-    hoverItems.forEach(item => {
-        item.addEventListener("mouseover", () => {
-            let newImage = item.getAttribute("data-img");
-            let color = item.getAttribute("data-color");
-            let loadingLine = item.querySelector(".loading-line");
-
-            // Set loading color
-            loadingLine.style.backgroundColor = color;
-            loadingLineImage.style.backgroundColor = color;
-
-            // Start loading animation for text
-            loadingLine.style.width = "100%";
-            setTimeout(() => {
-                loadingLine.style.opacity = "0";
-                setTimeout(() => {
-                    loadingLine.style.width = "0%";
-                    loadingLine.style.opacity = "1";
-                }, 300); // Reset after fade-out
-            }, 1000); // 1 sec load, then vanish
-
-            // Start loading animation for image
-            loadingLineImage.style.width = "100%";
-            setTimeout(() => {
-                displayImage.src = newImage; // Change image AFTER animation completes
-                loadingLineImage.style.opacity = "0";
-                setTimeout(() => {
-                    loadingLineImage.style.width = "0%";
-                    loadingLineImage.style.opacity = "1";
-                }, 300);
-            }, 1000);
-        });
-    });
-=======
 carousel.addEventListener("scroll", infiniteScroll);
 
 //updates
@@ -284,5 +243,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize both sections
   initializeEvents();
   initializeAwards();
->>>>>>> e4b9ece6a82a2f7ad483ba3a1a35534ff4673856
 });
