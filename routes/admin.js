@@ -7,7 +7,7 @@ import { createTokenForUser } from "../services/authentication.js";
 const router = express.Router();
 
 router.get("/login",(req,res)=>{
-    res.render("signIn");
+    res.render("signIn.ejs");
 });
 
 
