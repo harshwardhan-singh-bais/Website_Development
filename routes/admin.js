@@ -11,7 +11,7 @@ router.get("/login",(req,res)=>{
 });
 
 
-router.post("/signIn", async (req, res) => {
+router.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     // Sanitize email and password
@@ -39,7 +39,7 @@ router.post("/signIn", async (req, res) => {
         // Set cookies and redirect
         res.cookie("email", admin.email);
         res.cookie("fullName", admin.fullname);
-        res.cookie("token", token).redirect("/admin/dashboard");
+        res.cookie("token", token).redirect("https://iiitn.ac.in/");
     } catch (error) {
         return res.render("signIn", { error: "Something went wrong. Please try again." });
     }
