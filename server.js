@@ -48,6 +48,23 @@ app.get("/reach", (req,res)=>{
 app.get("/recruitment", (req,res)=>{
   res.render("foot/recruitment.ejs")
 })
+
+app.get("/complaints/internal",(req,res)=>{
+  res.render("foot/complaints/internal.ejs")
+})
+
+app.get("/complaints/scst",(req,res)=>{
+  res.render("foot/complaints/scst.ejs")
+})
+
+app.get("/complaints/anti-ragging",(req,res)=>{
+  res.render("foot/complaints/anti-ragging.ejs")
+})
+
+app.get("/complaints/networking",(req,res)=>{
+  res.render("foot/complaints/networking.ejs")
+})
+
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
 });
