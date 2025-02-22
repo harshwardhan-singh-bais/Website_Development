@@ -873,7 +873,7 @@ h2 {
 
 .notice-board {
   position: relative;
-  height: 300px;
+  height: 40vh;
   overflow: hidden;
 }
 
@@ -991,7 +991,7 @@ h2 {
 
 .faculty-notice-board {
   position: relative;
-  height: 300px;
+  height: 40vh;
   overflow: hidden;
 }
 
