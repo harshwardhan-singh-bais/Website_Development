@@ -1,13 +1,36 @@
 body {
+  top: 0px !important;
   font-family: "Atma", serif;
   min-height: 100vh;
   min-width: 100vw;
 }
+.text
+{
+  margin-right:450px;
+}
+div.top_head>button
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border:2px solid rgb(32, 36, 250);
+  border-radius: 16px;
+  width:100px;
+  background-color: #1df2d9;
+  margin-left: 530px;
+}
 
-div.top_head {
-  height: 4vh;
+div.top_head
+{
+  display: flex;
+  flex-direction: row;
+  color:white;
+  height: 5vh;
+  padding:2px;
   width: 100vw;
   background-color: black;
+}
+
+div.top_head>a{
+ margin-left:25px;
 }
 
 div#backImage {
