@@ -238,10 +238,41 @@
     </div>
   </div>
 
-
-
-
-
+  
+  <div class="club-section">
+    <div class="club-heading">
+      <h1>Student Clubs</h1>
+    </div>
+  
+    <div class="club-grid">
+      <% const clubs = [
+        { logo: 'a1.png', name: 'Dot Slash', description: 'This is a club for coding and innovation.' },
+        { logo: 'b1.png', name: 'Elevate', description: 'This is a club for development and growth.' },
+        { logo: 'c1.png', name: 'Strokes', description: 'This is a club for design and creativity.' },
+        { logo: 'd1.png', name: 'IoTics', description: 'This is a club for robotics and IoT.' },
+        { logo: 'e1.png', name: 'Udyam', description: 'This is a club for entrepreneurship and innovation.' },
+        { logo: 'f1.png', name: 'Crescendo', description: 'This is a cultural club for music and singing.' },
+        { logo: 'i1.png', name: 'Orator', description: 'This is a club for debate and public speaking.' },
+        { logo: 'j1.png', name: 'Probe', description: 'This is a club for photography, videography, and media.' },
+        { logo: 'k1.png', name: 'Eklavya', description: 'This is a sports club for fitness and teamwork.' },
+        { logo: 'l1.png', name: 'CRISPR', description: 'This is a club for research and public relations.' }
+      ]; %>
+  
+      <% clubs.forEach((club, index) => { %>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front <%= index % 2 === 0 ? 'bg-orange' : 'bg-dark-blue' %>">
+              <img src="/images/<%= club.logo %>" alt="<%= club.name %>" onerror="this.src='/css/images/placeholder.png';">
+              <h3><%= club.name %></h3>
+            </div>
+            <div class="flip-card-back <%= index % 2 === 0 ? 'bg-dark-blue' : 'bg-orange' %>">
+              <p><%= club.description %></p>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
 
 <!-- Video Slogan Section -->
 <section class="video-slogan-section">

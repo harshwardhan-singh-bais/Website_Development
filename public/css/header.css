@@ -132,31 +132,164 @@ nav#site_head>a>img.header_logo {
 
 
 /* Adding dropdowns to the header */
-.dropDown {
+
+.Institute_dropDown {
     display: none;
+    grid-template: 1fr / 1fr 1fr 1fr;
     height: 60vh;
-    width: 85vw;
+        width: 85vw;
+        position: fixed;
+        overflow: hidden;
+        top: 24.2vh;
+        left: 7.25vw;
+        z-index: 1000;
+        background-color: rgba(245, 245, 245);
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+}
+
+.Institute_dropDown > .category {
+    display: flex;
+    flex-direction: column;
+} 
+
+.Institute_dropDown>.category>div {
+    align-self: center;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 3vh 0px;
+    background-color: darkorange;
+    font-size: 4vh;
+}
+
+.Institute_dropDown>.category>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    list-style: none;
+}
+
+.Institute_dropDown>.category>ul>li>a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vh;
+    font-size: 2vh;
+}
+
+.Institute_dropDown>.category>ul>li>a:hover {
+    width: 100%;
+    color: rgb(255, 89, 0);
+}
+
+a.Institute:hover+.Institute_dropDown,
+.Institute_dropDown:hover {
+    display: grid;
+    animation: dropDown_appear 0.25s ease-in-out;
+}
+
+
+
+
+
+.Admissions_dropDown {
+    display: none;
+    height: 30vh;
+    width: 15vw;
     position: fixed;
-    top: 24.5vh;
-    left: 7.25vw;                
+    overflow: hidden;
+    top: 24.2vh;
+    left: 35vw;                
     z-index: 1000;
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245);
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
 }
 
-a.Institute:hover + .dropDown,
-.dropDown:hover {
+.Admissions_dropDown>ul {
+    display: flex;
+    list-style: none;
+    padding: 3vh;
+    gap: 3vh;
+    flex-direction: column;
+}
+
+.Admissions_dropDown>ul>li>a {
+    text-decoration: none;
+        font-size: 2vh;
+    color: black;
+}
+
+.Admissions_dropDown>ul>li>a:hover {
+    color: rgb(255, 89, 0);
+}
+
+a.Admissions:hover + .Admissions_dropDown,
+.Admissions_dropDown:hover {
     display: block;
-    animation: dropDown_appear 0.25s ease-in-out;
+    animation: dropDown_appear_small 0.25s ease-in-out;
 }
 
 
-a.Department:hover + .dropDown,
-.dropDown:hover {
-    display: block;
+
+.Academics_dropDown {
+    display: none;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    height: 60vh;
+    width: 85vw;
+    position: fixed;
+    overflow: hidden;
+    top: 24.2vh;
+    left: 7.25vw;
+    z-index: 1000;
+    background-color: rgba(245, 245, 245);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.Academics_dropDown > .column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Academics_dropDown>.column>div  {
+    align-self: center;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 3vh 0px;
+    background-color: darkorange;
+    font-size: 4vh;
+}
+
+.Academics_dropDown>.column > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    list-style: none;
+}
+
+.Academics_dropDown>.column>ul>li>a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vh;
+    font-size: 2vh;
+}
+
+.Academics_dropDown>.column>ul>li>a:hover {
+    width: 100%;
+    color: rgb(255, 89, 0);
+}
+
+
+a.Academics:hover + .Academics_dropDown,
+.Academics_dropDown:hover {
+    display: grid;
     animation: dropDown_appear 0.25s ease-in-out;
 }
+
 
 
 
@@ -165,11 +298,11 @@ a.Department:hover + .dropDown,
 /* animations */
 @keyframes appear_border {
     from {
-            border-bottom: 0px;
+            border-bottom-width: 0%;
     }
     
         to {
-            border-bottom: 30px;
+            border-bottom-width: 100%;
     }
 }
 
@@ -197,3 +330,13 @@ a.Department:hover + .dropDown,
             height: 0vh;                     
         }
 } 
+
+
+@keyframes dropDown_appear_small {
+    0% {
+        height: 0vh;
+    } 100% {
+        height: 30vh;
+    }
+    
+}
