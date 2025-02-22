@@ -611,15 +611,211 @@ h2 {
 
 */
 
+/* Club Section */
+.club-section {
+  padding: 40px 20px; /* Space above and below */
+  background-image: url('/images/image3.jpg'); /* Updated background image */
+  background-size: cover; /* Cover full width and height */
+  background-position: center; /* Center the image */
+}
+
+/* Club Heading */
+.club-heading {
+  text-align: center;
+  margin-bottom: 40px; /* Space below heading */
+}
+
+.club-heading h1 {
+  font-family: 'Cinzel', serif; /* Very stylish UK-style font */
+  font-size: 4rem; /* Larger font size */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Uppercase for a classic look */
+  letter-spacing: 2px; /* Add spacing between letters */
+}
+
+.club-heading .quote {
+  font-family: 'Cinzel', serif; /* Very stylish UK-style font */
+  font-size: 1.5rem;
+  font-style: italic;
+  color: white;
+  opacity: 0.8; /* Slightly transparent */
+}
+
+/* Club Grid */
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 20px; /* Slight gaps between cards */
+  max-width: 1200px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Flip Card */
+.flip-card {
+  perspective: 1000px; /* Enable 3D perspective */
+  width: 100%; /* Full width of the grid cell */
+  height: 400px; /* Increased height for larger logos */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; /* Smooth flip animation */
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 15px; /* Curved edges */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face initially */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px; /* Curved edges */
+}
+
+/* Front Side */
+.flip-card-front.bg-orange {
+  background: rgba(255, 140, 0, 0.75); /* Orange with 75% opacity */
+}
+
+.flip-card-front.bg-dark-blue {
+  background: rgba(0, 56, 168, 0.75); /* Dark blue with 75% opacity */
+}
+
+/* Back Side */
+.flip-card-back.bg-orange {
+  background: rgba(255, 140, 0, 0.75); /* Orange with 75% opacity */
+  transform: rotateY(180deg); /* Initially hidden */
+}
+
+.flip-card-back.bg-dark-blue {
+  background: rgba(0, 56, 168, 0.75); /* Dark blue with 75% opacity */
+  transform: rotateY(180deg); /* Initially hidden */
+}
+
+/* Logo and Text Styling */
+.flip-card img {
+  width: 150px; /* Larger logo size */
+  height: 150px; /* Larger logo size */
+  object-fit: cover; /* Ensure the logo fits */
+  margin-bottom: 20px; /* Space between logo and text */
+}
+
+.flip-card h3 {
+  font-family: 'Cinzel', serif; /* Very stylish UK-style font */
+  font-size: 1.8rem; /* Larger club name size */
+  font-weight: bold;
+  margin: 0;
+  color: white; /* Ensure text is fully opaque */
+}
+
+.flip-card p {
+  font-family: 'Cinzel', serif; /* Very stylish UK-style font */
+  font-size: 1.2rem; /* Larger description size */
+  line-height: 1.5; /* Improve readability */
+  color: white; /* Ensure text is fully opaque */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .club-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .club-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+  }
+
+  .club-heading h1 {
+    font-size: 3rem; /* Smaller heading for tablets */
+  }
+
+  .club-heading .quote {
+    font-size: 1.2rem; /* Smaller quote for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .club-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller tablets */
+  }
+
+  .club-heading h1 {
+    font-size: 2.5rem; /* Smaller heading for smaller tablets */
+  }
+
+  .club-heading .quote {
+    font-size: 1rem; /* Smaller quote for smaller tablets */
+  }
+
+  .flip-card img {
+    width: 120px; /* Slightly smaller logo for smaller tablets */
+    height: 120px;
+  }
+
+  .flip-card h3 {
+    font-size: 1.5rem; /* Smaller club name for smaller tablets */
+  }
+
+  .flip-card p {
+    font-size: 1rem; /* Smaller description for smaller tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .club-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+  }
+
+  .club-heading h1 {
+    font-size: 2rem; /* Smaller heading for mobile */
+  }
+
+  .club-heading .quote {
+    font-size: 0.9rem; /* Smaller quote for mobile */
+  }
+
+  .flip-card {
+    height: 350px; /* Slightly smaller height for mobile */
+  }
+
+  .flip-card img {
+    width: 100px; /* Smaller logo for mobile */
+    height: 100px;
+  }
+
+  .flip-card h3 {
+    font-size: 1.2rem; /* Smaller club name for mobile */
+  }
+
+  .flip-card p {
+    font-size: 0.9rem; /* Smaller description for mobile */
+  }
+}
+
 /* Research Section Styling */
 .research {
   padding: 2.5vw;
-  background: linear-gradient(
-    277deg,
-    rgba(28, 121, 218, 0.7) 0%,
-    rgba(136, 194, 240, 0.8) 46%,
-    rgba(72, 164, 250, 0.7) 100%
-  );
+  background-image: url('/images/image3.jpg'); /* Updated background image */
+  background-size: cover; /* Cover full width and height */
+  background-position: center; /* Center the image */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,6 +968,21 @@ h2 {
 
 .research_list > li:hover h3 {
   opacity: 0; /* Hide title on hover */
+}
+
+/* Research Heading */
+.research-heading {
+  font-family: 'Cinzel', serif; /* Stylish British UK font with sharp edges */
+  font-size: 2.8rem; /* Further reduced size for a sleek look */
+  font-weight: 700; /* Bold */
+  color: #e0f7ff; /* Bluish-white color */
+  text-align: left; /* Shifted title to the left */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Slightly reduced letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+  position: relative;
+  z-index: 2; /* Ensure it's above the overlay */
 }
 
 /* Responsive Design */
@@ -982,7 +1193,7 @@ h2 {
 /* Club Section */
 .club-section {
   padding: 40px 20px; /* Space above and below */
-  background-image: url("/images/image.jpg"); /* Background image */
+  background-image: url('/images/image3.jpg'); /* Background image */
   background-size: cover; /* Cover full width and height */
   background-position: center; /* Center the image */
 }
@@ -994,7 +1205,7 @@ h2 {
 }
 
 .club-heading h1 {
-  font-family: "Playfair Display", serif; /* Classic UK font */
+  font-family: 'Playfair Display', serif; /* Classic UK font */
   font-size: 3rem;
   font-weight: bold;
   color: white;
@@ -1002,7 +1213,7 @@ h2 {
 }
 
 .club-heading .quote {
-  font-family: "Playfair Display", serif; /* Classic UK font */
+  font-family: 'Playfair Display', serif; /* Classic UK font */
   font-size: 1.2rem;
   font-style: italic;
   color: white;
@@ -1022,7 +1233,7 @@ h2 {
 .flip-card {
   perspective: 1000px; /* Enable 3D perspective */
   width: 100%; /* Full width of the grid cell */
-  height: 300px; /* Fixed height */
+  height: 400px; /* Increased height for larger logos */
 }
 
 .flip-card-inner {
@@ -1039,8 +1250,7 @@ h2 {
   transform: rotateY(180deg); /* Flip effect on hover */
 }
 
-.flip-card-front,
-.flip-card-back {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1077,23 +1287,23 @@ h2 {
 
 /* Logo and Text Styling */
 .flip-card img {
-  width: 100px; /* Logo size */
-  height: 100px;
+  width: 150px; /* Larger logo size */
+  height: 150px; /* Larger logo size */
   object-fit: cover; /* Ensure the logo fits */
-  margin-bottom: 15px; /* Space between logo and text */
+  margin-bottom: 20px; /* Space between logo and text */
 }
 
 .flip-card h3 {
-  font-family: "Playfair Display", serif; /* Classic UK font */
-  font-size: 1.5rem; /* Club name size */
+  font-family: 'Playfair Display', serif; /* Classic UK font */
+  font-size: 1.8rem; /* Larger club name size */
   font-weight: bold;
   margin: 0;
   color: white; /* Ensure text is fully opaque */
 }
 
 .flip-card p {
-  font-family: "Playfair Display", serif; /* Classic UK font */
-  font-size: 1rem; /* Description size */
+  font-family: 'Playfair Display', serif; /* Classic UK font */
+  font-size: 1.2rem; /* Larger description size */
   line-height: 1.5; /* Improve readability */
   color: white; /* Ensure text is fully opaque */
 }
@@ -1131,6 +1341,19 @@ h2 {
   .club-heading .quote {
     font-size: 0.9rem; /* Smaller quote for smaller tablets */
   }
+
+  .flip-card img {
+    width: 120px; /* Slightly smaller logo for smaller tablets */
+    height: 120px;
+  }
+
+  .flip-card h3 {
+    font-size: 1.5rem; /* Smaller club name for smaller tablets */
+  }
+
+  .flip-card p {
+    font-size: 1rem; /* Smaller description for smaller tablets */
+  }
 }
 
 @media (max-width: 576px) {
@@ -1147,12 +1370,12 @@ h2 {
   }
 
   .flip-card {
-    height: 250px; /* Smaller height for mobile */
+    height: 350px; /* Slightly smaller height for mobile */
   }
 
   .flip-card img {
-    width: 80px; /* Smaller logo for mobile */
-    height: 80px;
+    width: 100px; /* Smaller logo for mobile */
+    height: 100px;
   }
 
   .flip-card h3 {
@@ -1407,6 +1630,11 @@ h2 {
   align-items: flex-start; /* Align boxes at the top */
 }
 
+
+
+
+
+
 /* Combined Section Styling */
 .combined-section {
   display: flex;
@@ -1418,87 +1646,97 @@ h2 {
   gap: 20px;
 }
 
-/* Column 1: Sentences */
-.text-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Headlines Container */
+.headlines-container {
+  width: 40%; /* Increased width */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden; /* Hide overflow */
+  border: 4px solid #002147; /* Dark blue border */
 }
 
-.hover-item {
-  font-size: 1.2rem;
+.headlines-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
   font-weight: bold;
-  cursor: pointer;
+  color: #002147; /* Dark blue */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Headlines List */
+.headlines-list {
+  height: 300px; /* Fixed height for 6 headlines */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px; /* Space for scrollbar */
+}
+
+.headline-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
   padding: 10px;
-  position: relative;
-  transition: color 0.3s ease;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block; /* Make it a block-level element for full width */
+  text-decoration: none; /* Remove underline */
 }
 
-.hover-item:hover {
-  color: #007bff; /* Change color on hover */
+.headline-item:hover {
+  background: #e0f7ff; /* Light blue on hover */
 }
 
-.loading-line {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 0%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1;
-  padding-left: 10px;
+/* Scrollbar Styling */
+.headlines-list::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Column 2: Image */
+.headlines-list::-webkit-scrollbar-thumb {
+  background: #002147; /* Dark blue */
+  border-radius: 4px;
+}
+
+.headlines-list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray */
+}
+
+/* Image Carousel */
 .image-container {
   width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+  background: #002147; /* Dark blue background */
+  border-radius: 15px; /* Curved edges */
+  padding: 20px; /* Inner spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Hide overflow */
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 10px; /* Curved edges for the carousel */
 }
 
-.border-container {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  transition: background-color 0.2s ease-in-out;
+.carousel-inner {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 500%; /* 5 images */
+  transition: transform 0.5s ease-in-out;
 }
 
-.inner-border {
+.carousel-item {
   width: 100%;
-  height: 100%;
-  padding: 10px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px; /* Curved edges for images */
+  object-fit: cover; /* Ensure images cover the area */
 }
 
-#display-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.loading-line-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Column 3: Stats Section */
+/* Stats Container */
 .stats-container {
   width: 30%;
   display: flex;
@@ -1530,7 +1768,7 @@ h2 {
   font-size: 2.5rem;
   font-weight: bold;
   position: relative;
-  color: #ff8c00;
+  color: #ff8c00; /* Orange */
   text-shadow: 2px 2px 0 #007bff, 4px 4px 0 rgba(0, 123, 255, 0.5);
   margin-bottom: 10px;
 }
@@ -1549,7 +1787,7 @@ h2 {
     gap: 30px;
   }
 
-  .text-container,
+  .headlines-container,
   .image-container,
   .stats-container {
     width: 100%;
