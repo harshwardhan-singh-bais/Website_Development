@@ -532,17 +532,17 @@ h2 {
   bottom: 0;
 }
 
+/*
 
 
-
-/* Stats Section Styling */
+/* Stats Section Styling 
 .stats-section {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px; /* Reduced padding to minimize white space */
-  background: #002147; /* Dark blue background */
-  min-height: 30vh; /* Reduced height to fit content better */
+  padding: 20px; /* Reduced padding to minimize white space 
+  background: #002147; /* Dark blue background 
+  min-height: 30vh; /* Reduced height to fit content better 
 }
 
 .stat-item {
@@ -550,26 +550,25 @@ h2 {
 }
 
 .stat-number {
-  font-size: 6rem; /* Large size for impact */
+  font-size: 6rem; /* Large size for impact 
   font-weight: bold;
   position: relative;
   margin-bottom: 10px;
-  color: #ff8c00; /* Orange color for the front face */
+  color: #ff8c00; /* Orange color for the front face 
   text-shadow: 
-    3px 3px 0 #007bff, /* Blue shadow for 3D effect */
-    6px 6px 0 rgba(0, 123, 255, 0.5); /* Lighter blue for depth */
+    3px 3px 0 #007bff, /* Blue shadow for 3D effect 
+    6px 6px 0 rgba(0, 123, 255, 0.5); /* Lighter blue for depth 
 }
 
 .stat-text {
   font-size: 1.5rem;
-  color: white; /* White text for better contrast on dark blue */
+  color: white; /* White text for better contrast on dark blue 
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 20px; /* Adjusted margin for better spacing */
+  margin-top: 20px; /* Adjusted margin for better spacing 
 }
 
-
-
+*/
 
 
 
@@ -725,13 +724,24 @@ h2 {
   opacity: 0; /* Hide title on hover */
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .research_list > li {
+    width: 50vw; /* 2 cards visible at a time */
+  }
+}
+
+@media (max-width: 480px) {
+  .research_list > li {
+    width: 80vw; /* 1 card visible at a time */
+  }
+}
 
 
+/*
 
 
-
-
-/* Section Container */
+/* Section Container 
 .side-image-section {
   display: flex;
   justify-content: space-between;
@@ -741,7 +751,7 @@ h2 {
   padding: 50px 0;
 }
 
-/* Left Side: Sentences */
+/* Left Side: Sentences 
 .text-container {
   width: 45%;
   display: flex;
@@ -757,8 +767,8 @@ h2 {
   position: relative;
 }
 
-/* Loading Line */
-/* Loading Line (Now Only Covers the Complementary Space) */
+/* Loading Line 
+/* Loading Line (Now Only Covers the Complementary Space) 
 .loading-line {
   position: absolute;
   left: 0;
@@ -766,12 +776,12 @@ h2 {
   height: 100%;
   width: 0%;
   transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1; /* Moves behind text */
-  padding-left: 10px; /* Ensures text remains fully visible */
+  z-index: -1; /* Moves behind text 
+  padding-left: 10px;  Ensures text remains fully visible 
 }
 
 
-/* Right Side: Image */
+/* Right Side: Image 
 .image-container {
   width: 50%;
   display: flex;
@@ -782,7 +792,7 @@ h2 {
   overflow: hidden;
 }
 
-/* Outer Border (Changes Color Instantly) */
+/* Outer Border (Changes Color Instantly) 
 .border-container {
   width: 90%;
   height: 100%;
@@ -793,7 +803,7 @@ h2 {
   align-items: center;
 }
 
-/* Inner White Border */
+/* Inner White Border 
 .inner-border {
   width: 100%;
   height: 100%;
@@ -804,7 +814,7 @@ h2 {
   align-items: center;
 }
 
-/* Image */
+/* Image 
 #display-image {
   width: 100%;
   height: auto;
@@ -812,7 +822,7 @@ h2 {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Loading Animation on Image */
+/* Loading Animation on Image 
 .loading-line-image {
   position: absolute;
   top: 0;
@@ -825,7 +835,7 @@ h2 {
 
 
 
-
+*/
 
 
 
@@ -1072,4 +1082,168 @@ h2 {
 display: flex;
 justify-content: space-between;
 align-items: flex-start; /* Align boxes at the top */
+}
+
+
+
+
+
+
+/* Combined Section Styling */
+.combined-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Column 1: Sentences */
+.text-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hover-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.hover-item:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.loading-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0%;
+  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -1;
+  padding-left: 10px;
+}
+
+/* Column 2: Image */
+.image-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.border-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-border {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#display-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loading-line-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Column 3: Stats Section */
+.stats-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  color: #ff8c00;
+  text-shadow: 2px 2px 0 #007bff, 4px 4px 0 rgba(0, 123, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+.stat-text {
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .combined-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text-container,
+  .image-container,
+  .stats-container {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
 }

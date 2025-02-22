@@ -41,6 +41,7 @@ router.post("/login", async (req, res) => {
         res.cookie("fullName", admin.fullname);
         res.cookie("token", token).redirect("https://iiitn.ac.in/");
     } catch (error) {
+        console.log(error);
         return res.render("signIn", { error: "Something went wrong. Please try again." });
     }
 });
