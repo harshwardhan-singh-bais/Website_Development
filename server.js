@@ -20,10 +20,10 @@ app.use(cookieParser()); // For handling cookies
 app.set("view engine", "ejs");
 
 // MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.15"; // Replace with actual MongoDB URI
+const MONGO_URI = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.15"; // Replace with actual MongoDB URI
 mongoose
   .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("✅ Connected to MongoDB"))
+  .then(() => console.log("✅ Connected to MongoDB",MONGO_URI))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // Routes
