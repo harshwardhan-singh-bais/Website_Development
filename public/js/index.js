@@ -329,3 +329,15 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(statsSection);
+
+
+// Optional: Add JavaScript for additional interactivity
+document.querySelectorAll('.box').forEach(box => {
+  box.addEventListener('mouseenter', () => {
+    box.style.transform = 'rotateY(90deg)';
+  });
+
+  box.addEventListener('mouseleave', () => {
+    box.style.transform = 'rotateY(0deg)';
+  });
+});
