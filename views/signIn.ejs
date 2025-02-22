@@ -11,12 +11,12 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <div class="big-container">
+        <% if (locals.error) { %>
+            <div class="error-message" role="alert">
+              <%= locals.error %>
+            </div>
+            <% } %>
     <div class="container">
-      <% if (locals.error) { %>
-        <div class="error-message" role="alert">
-          <%= locals.error %>
-        </div>
-        <% } %>
         
         <form action="/admin/login" method="post">
           <label for="email">Email ID</label>
