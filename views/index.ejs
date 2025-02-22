@@ -123,74 +123,26 @@
       </section>
     </div>
     <div class="research">
-      <h2>Research & Innovation</h2>
-      <hr>
-      <div class="researchSlider">
-        <i class="fa-solid fa-angle-left" id="left"></i>
-        <ul class="research_list">
-          <!-- Card 1 -->
-          <li class="research_item" onclick="window.location.href='/research?card=1'">
-            <div class="card-content">
-              <img src="/images/a.jpg" alt="Artificial Intelligence" draggable="false">
-              <h3>Artificial Intelligence & Machine Learning</h3>
-              <div class="hover-content">
-                <p>Advancing deep learning, NLP, and AI-driven automation for real-world applications.</p>
-              </div>
-            </div>
-          </li>
-          <!-- Card 2 -->
-          <li class="research_item" onclick="window.location.href='/research?card=2'">
-            <div class="card-content">
-              <img src="/images/b.jpg" alt="Quantum Computing" draggable="false">
-              <h3>Quantum Computing & Cryptography</h3>
-              <div class="hover-content">
-                <p>Exploring quantum algorithms and secure encryption methods for next-gen computing.</p>
-              </div>
-            </div>
-          </li>
-          <!-- Card 3 -->
-          <li class="research_item" onclick="window.location.href='/research?card=3'">
-            <div class="card-content">
-              <img src="/images/c.jpg" alt="IoT & Smart Systems" draggable="false">
-              <h3>IoT & Smart Systems</h3>
-              <div class="hover-content">
-                <p>Developing intelligent, interconnected devices for smart cities, healthcare, and automation.</p>
-              </div>
-            </div>
-          </li>
-          <!-- Card 4 -->
-          <li class="research_item" onclick="window.location.href='/research?card=4'">
-            <div class="card-content">
-              <img src="/images/d.jpg" alt="Cybersecurity" draggable="false">
-              <h3>Cybersecurity & Ethical Hacking</h3>
-              <div class="hover-content">
-                <p>Strengthening digital security through penetration testing, threat analysis, and cryptography.</p>
-              </div>
-            </div>
-          </li>
-          <!-- Card 5 -->
-          <li class="research_item" onclick="window.location.href='/research?card=5'">
-            <div class="card-content">
-              <img src="/images/e.jpg" alt="HCI" draggable="false">
-              <h3>Human-Computer Interaction (HCI)</h3>
-              <div class="hover-content">
-                <p>Enhancing user experience with intuitive interfaces, AR/VR, and assistive technologies.</p>
-              </div>
-            </div>
-          </li>
-          <!-- Card 6 -->
-          <li class="research_item" onclick="window.location.href='/research?card=6'">
-            <div class="card-content">
-              <img src="/images/f.jpg" alt="Autonomous Systems" draggable="false">
-              <h3>Autonomous Systems & Robotics</h3>
-              <div class="hover-content">
-                <p>Designing AI-powered robots for automation, navigation, and real-world problem-solving.</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <i class="fa-solid fa-angle-right" id="right"></i>
-      </div>
+        <h2>Research & Innovation</h2>
+        <hr>
+        <div class="researchSlider">
+            <i class="fa-solid fa-angle-left" id="left"></i>
+            <ul class="research_list">
+                <% researchItems.forEach(item => { %>
+                    <li class="research_item" onclick="window.location.href='/research?card=<%= item._id %>'">
+                        <div class="card-content">
+                            <img src="<%= item.imageUrl %>" alt="<%= item.title %>" draggable="false">
+                            <h3><%= item.title %></h3>
+                            <div class="hover-content">
+                                <p><%= item.description %></p>
+                            </div>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+            <i class="fa-solid fa-angle-right" id="right"></i>
+        </div>
+        
     </div>
 
 
