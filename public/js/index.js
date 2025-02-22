@@ -571,3 +571,19 @@ class FacultyNoticeBoard {
 document.addEventListener("DOMContentLoaded", () => {
   new FacultyNoticeBoard();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Auto-scrolling carousel
+  const carouselInner = document.querySelector('.carousel-inner');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  let currentIndex = 0;
+
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Start the carousel
+  setInterval(showNextImage, 2000); // Change image every 2 seconds
+});
