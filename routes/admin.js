@@ -6,6 +6,7 @@ import { createTokenForUser } from "../services/authentication.js";
 
 const router = express.Router();
 
+
 router.get("/login",(req,res)=>{
     res.render("signIn.ejs");
 });
@@ -39,7 +40,7 @@ router.post("/login", async (req, res) => {
         // Set cookies and redirect
         res.cookie("email", admin.email);
         res.cookie("fullName", admin.fullname);
-        res.cookie("token", token).redirect("https://iiitn.ac.in/");
+        res.cookie("token", token).redirect("/admin/research");
     } catch (error) {
         console.log(error);
         return res.render("signIn", { error: "Something went wrong. Please try again." });
