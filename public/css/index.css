@@ -351,7 +351,11 @@ h2 {
   }
 }
 
-/* Reasearch and Development slider */
+
+
+/*
+
+ Reasearch and Development slider 
 .research {
   padding-left: 2.5vw;
   padding-right: 2.5vw;
@@ -370,7 +374,7 @@ h2 {
   position: relative;
 }
 
-/* Scroll Buttons */
+/* Scroll Buttons 
 .researchSlider i {
   height: 50px;
   width: 50px;
@@ -431,6 +435,402 @@ h2 {
 .research_list > li {
   scroll-snap-align: start;
 }
+
+
+*/
+
+
+/* Testimonials Section */
+.testimonials-section {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  color: #002147;
+  margin-bottom: 10px;
+}
+
+.testimonials-section hr {
+  width: 10%;
+  margin: 0 auto 20px auto;
+  border: 2px solid rgb(253, 92, 56);
+}
+
+/* Testimonials Container */
+.testimonials-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #007BFF #f4f4f4;
+}
+
+.testimonials-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonials-container::-webkit-scrollbar-thumb {
+  background-color: #007BFF;
+  border-radius: 4px;
+}
+
+.testimonials-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.testimonial-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.testimonial-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 123, 255, 0.9);
+  color: white;
+  text-align: center;
+  transition: bottom 0.3s ease;
+  border-radius: 0 0 10px 10px;
+}
+
+.testimonial-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.testimonial-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Hover Effect */
+.testimonial-card:hover {
+  height: 300px;
+}
+
+.testimonial-card:hover .testimonial-info {
+  bottom: 0;
+}
+
+
+
+
+/* Stats Section Styling */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px; /* Reduced padding to minimize white space */
+  background: #002147; /* Dark blue background */
+  min-height: 30vh; /* Reduced height to fit content better */
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 6rem; /* Large size for impact */
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 10px;
+  color: #ff8c00; /* Orange color for the front face */
+  text-shadow: 
+    3px 3px 0 #007bff, /* Blue shadow for 3D effect */
+    6px 6px 0 rgba(0, 123, 255, 0.5); /* Lighter blue for depth */
+}
+
+.stat-text {
+  font-size: 1.5rem;
+  color: white; /* White text for better contrast on dark blue */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px; /* Adjusted margin for better spacing */
+}
+
+
+
+
+
+
+
+
+
+
+/* Research Section Styling */
+.research {
+  padding: 2.5vw;
+  background: linear-gradient(277deg, rgba(28, 121, 218, 0.7) 0%, rgba(136, 194, 240, 0.8) 46%, rgba(72, 164, 250, 0.7) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.researchSlider {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left and Right Scroll Icons */
+.researchSlider i {
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 10;
+}
+
+.researchSlider i:first-child { left: 10px; }
+.researchSlider i:last-child { right: 10px; }
+
+/* Research List (Grid) */
+.research_list {
+  display: flex;
+  list-style: none;
+  gap: 1.5vw;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px 0;
+  animation: infiniteScroll 10s linear infinite; /* Increased speed */
+}
+
+.researchSlider:hover .research_list {
+  animation-play-state: paused; /* Pause on hover */
+}
+
+@keyframes infiniteScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.researchSlider::-webkit-scrollbar { display: none; }
+
+.research_list > li {
+  position: relative;
+  height: 40vh; /* Default height */
+  width: 25vw; /* 3 cards visible at a time */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black; /* Text color */
+  background: white; /* Background color */
+  cursor: pointer;
+  overflow: hidden;
+  scroll-snap-align: start;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  border-radius: 15px; /* Curved edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.4s ease-in-out;
+}
+
+/* Card Content */
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the top */
+  align-items: center;
+}
+
+.card-content img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; /* Curved edges for image */
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out; /* Fade out title on hover */
+}
+
+.hover-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; /* Background color */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align text at the top */
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px; /* Curved edges */
+}
+
+.hover-content p {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 10px; /* Space between text and image */
+  color: black; /* Text color */
+}
+
+/* Hover Effect */
+.research_list > li:hover {
+  height: 50vh; /* Expanded height */
+  transform: translateY(-10%);
+}
+
+.research_list > li:hover .hover-content {
+  top: 0;
+  opacity: 1;
+}
+
+.research_list > li:hover h3 {
+  opacity: 0; /* Hide title on hover */
+}
+
+
+
+
+
+
+
+/* Section Container */
+.side-image-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+/* Left Side: Sentences */
+.text-container {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hover-item {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+}
+
+/* Loading Line */
+/* Loading Line (Now Only Covers the Complementary Space) */
+.loading-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0%;
+  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -1; /* Moves behind text */
+  padding-left: 10px; /* Ensures text remains fully visible */
+}
+
+
+/* Right Side: Image */
+.image-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Outer Border (Changes Color Instantly) */
+.border-container {
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner White Border */
+.inner-border {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image */
+#display-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Loading Animation on Image */
+.loading-line-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
 
 /* Student and Faculty slots */
 #students_faculty {
