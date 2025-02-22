@@ -99,7 +99,9 @@ nav#site_head>a>img {
 }
 
 nav#site_head>a {
-    
+    display: flex;
+        align-items: center;
+        height: 100%;
     margin: 0px 1.5vw;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.683);
@@ -107,6 +109,8 @@ nav#site_head>a {
 }
 
 nav#site_head>a.header_logo {
+    position: relative;
+    z-index: 10;
     height: 12vh;
     width: 6vw;
     display: flex;
@@ -137,15 +141,16 @@ nav#site_head>a>img.header_logo {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
     height: 60vh;
-        width: 85vw;
-        position: fixed;
-        overflow: hidden;
-        top: 24.2vh;
-        left: 7.25vw;
-        z-index: 1000;
-        background-color: rgba(245, 245, 245);
-        border-bottom-right-radius: 50px;
-        border-bottom-left-radius: 50px;
+    width: 85vw;
+    overflow: hidden;
+    position: absolute;
+    top: 19.5vh;
+    left: 0vw;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgba(245, 245, 245);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .Institute_dropDown > .category {
@@ -197,11 +202,12 @@ a.Institute:hover+.Institute_dropDown,
     display: none;
     height: 30vh;
     width: 15vw;
-    position: fixed;
     overflow: hidden;
-    top: 24.2vh;
-    left: 35vw;                
-    z-index: 1000;
+    position: absolute;
+    top: 19.5vh;
+    left: 27.5vw;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     background-color: rgb(245, 245, 245);
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -238,12 +244,13 @@ a.Admissions:hover + .Admissions_dropDown,
     grid-template: 1fr / 1fr 1fr 1fr;
     height: 60vh;
     width: 85vw;
-    position: fixed;
     overflow: hidden;
-    top: 24.2vh;
-    left: 7.25vw;
-    z-index: 1000;
+    position: absolute;
+    top: 19.5vh;
+    left: 0vw;
+    z-index: 5;
     background-color: rgba(245, 245, 245);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
 }
