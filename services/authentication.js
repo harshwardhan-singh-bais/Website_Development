@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+dotenv.config(); // Load environment variables
 
 const secretkey = process.env.secret;
-dotenv.config(); // Load environment variables
+
 
 export function createTokenForUser(user) {
     const payload = { id: user._id, email: user.email };
