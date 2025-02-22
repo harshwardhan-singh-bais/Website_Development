@@ -33,6 +33,38 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.get("/calendar", (req,res)=>{
+  res.render("foot/calendar.ejs")
+})
+
+app.get("/fees", (req,res)=>{
+  res.render("foot/fees.ejs")
+})
+
+app.get("/reach", (req,res)=>{
+  res.render("foot/reach.ejs")
+})
+
+app.get("/recruitment", (req,res)=>{
+  res.render("foot/recruitment.ejs")
+})
+
+app.get("/complaints/internal",(req,res)=>{
+  res.render("foot/complaints/internal.ejs")
+})
+
+app.get("/complaints/scst",(req,res)=>{
+  res.render("foot/complaints/scst.ejs")
+})
+
+app.get("/complaints/anti-ragging",(req,res)=>{
+  res.render("foot/complaints/anti-ragging.ejs")
+})
+
+app.get("/complaints/networking",(req,res)=>{
+  res.render("foot/complaints/networking.ejs")
+})
+
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
 });
