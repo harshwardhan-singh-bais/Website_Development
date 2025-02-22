@@ -33,6 +33,21 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.get("/calendar", (req,res)=>{
+  res.render("foot/calendar.ejs")
+})
+
+app.get("/fees", (req,res)=>{
+  res.render("foot/fees.ejs")
+})
+
+app.get("/reach", (req,res)=>{
+  res.render("foot/reach.ejs")
+})
+
+app.get("/recruitment", (req,res)=>{
+  res.render("foot/recruitment.ejs")
+})
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
 });
