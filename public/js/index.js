@@ -245,6 +245,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeAwards();
 });
 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const hoverItems = document.querySelectorAll(".hover-item");
   const displayImage = document.getElementById("display-image");
@@ -287,7 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 // Function to animate the numbers
 function animateStats() {
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -300,7 +302,7 @@ function animateStats() {
     const updateNumber = () => {
       if (current < target) {
         current += increment;
-        statNumber.textContent = Math.ceil(current) + (statNumber.textContent.includes('%') ? '%' : ''); // Update the displayed number
+        statNumber.textContent = Math.ceil(current) + (statNumber.textContent.includes('%') ? '%' : ''); // Add % if applicable
         requestAnimationFrame(updateNumber); // Continue the animation
       } else {
         statNumber.textContent = target + (statNumber.textContent.includes('%') ? '%' : ''); // Ensure it ends at the exact target
@@ -312,7 +314,7 @@ function animateStats() {
 }
 
 // Trigger the animation when the section comes into view
-const statsSection = document.querySelector('.stats-section');
+const statsSection = document.querySelector('.stats-container');
 
 const observer = new IntersectionObserver(
   (entries) => {
