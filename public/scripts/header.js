@@ -4,7 +4,7 @@ function vhToPixels(vh) {
     return Math.round(window.innerHeight * (vh / 100));
 }
 
-const headerHeight = 14;
+const headerHeight = 20;
 
 const pxHeight = vhToPixels(headerHeight);
 
