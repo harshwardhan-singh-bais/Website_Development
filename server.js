@@ -70,7 +70,11 @@ app.get("/complaints/scst",(req,res)=>{
 
 app.get("/complaints/anti-ragging",(req,res)=>{
   res.render("foot/complaints/anti-ragging.ejs")
-})
+});
+
+app.get("/aboutUs",(req,res)=>{
+  res.render("aboutUs");
+});
 
 app.get("/complaints/networking",(req,res)=>{
   res.render("foot/complaints/networking.ejs")
