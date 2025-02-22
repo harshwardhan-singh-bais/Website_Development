@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeAwards();
 });
 
+<<<<<<< HEAD
 //Student Notices
 const notices = [
   {
@@ -475,3 +476,87 @@ document.addEventListener("DOMContentLoaded", () => {
   new FacultyNoticeBoard();
 });
 
+=======
+document.addEventListener("DOMContentLoaded", () => {
+  const hoverItems = document.querySelectorAll(".hover-item");
+  const displayImage = document.getElementById("display-image");
+  const loadingLineImage = document.querySelector(".loading-line-image");
+  const borderContainer = document.querySelector(".border-container");
+
+  hoverItems.forEach(item => {
+      item.addEventListener("mouseover", () => {
+          let newImage = item.getAttribute("data-img");
+          let color = item.getAttribute("data-color");
+          let loadingLine = item.querySelector(".loading-line");
+
+          // Change border color instantly
+          borderContainer.style.backgroundColor = color;
+
+          // Start loading animation for sentence (only filling the remaining space)
+          loadingLine.style.backgroundColor = color;
+          loadingLine.style.width = "calc(100% - 10px)"; // Leaves text uncovered
+
+          setTimeout(() => {
+              loadingLine.style.opacity = "0";
+              setTimeout(() => {
+                  loadingLine.style.width = "0%";
+                  loadingLine.style.opacity = "1";
+              }, 300);
+          }, 1000);
+
+          // Start loading animation for image
+          loadingLineImage.style.backgroundColor = color;
+          loadingLineImage.style.width = "100%";
+          setTimeout(() => {
+              displayImage.src = newImage;
+              loadingLineImage.style.opacity = "0";
+              setTimeout(() => {
+                  loadingLineImage.style.width = "0%";
+                  loadingLineImage.style.opacity = "1";
+              }, 300);
+          }, 1000);
+      });
+  });
+});
+
+
+// Function to animate the numbers
+function animateStats() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  statNumbers.forEach((statNumber) => {
+    const target = +statNumber.getAttribute('data-target'); // Get the target number
+    const increment = target / 200; // Slower increment for smoother animation
+    let current = 0;
+
+    const updateNumber = () => {
+      if (current < target) {
+        current += increment;
+        statNumber.textContent = Math.ceil(current) + (statNumber.textContent.includes('%') ? '%' : ''); // Update the displayed number
+        requestAnimationFrame(updateNumber); // Continue the animation
+      } else {
+        statNumber.textContent = target + (statNumber.textContent.includes('%') ? '%' : ''); // Ensure it ends at the exact target
+      }
+    };
+
+    updateNumber();
+  });
+}
+
+// Trigger the animation when the section comes into view
+const statsSection = document.querySelector('.stats-section');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateStats();
+        observer.unobserve(statsSection); // Stop observing after animation
+      }
+    });
+  },
+  { threshold: 0.5 } // Trigger when 50% of the section is visible
+);
+
+observer.observe(statsSection);
+>>>>>>> 7c96228216c459a9f7562a18e2ecb965c6442ba9
