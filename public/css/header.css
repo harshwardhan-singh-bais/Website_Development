@@ -17,6 +17,17 @@ div#college_name .college_header>a>img {
     float: left;
 }
 
+div#college_name .college_header > div > h2 {
+    font-family: 'Merriweather', sans-serif, 'Times New Roman';
+    color: darkblue;
+    font-weight: bold;
+}
+
+div#college_name .college_header > div > h6 {
+    color: brown;
+}
+
+
 div.title {
     display: flex;
     flex-direction: column;
