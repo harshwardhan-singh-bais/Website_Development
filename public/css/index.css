@@ -4,34 +4,109 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
-.text
-{
-  margin-right:450px;
-}
-div.top_head>button
-{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border:2px solid rgb(32, 36, 250);
-  border-radius: 16px;
-  width:100px;
-  background-color: #1df2d9;
-  margin-left: 530px;
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 12.5%; /* Expand fully */
+  }
 }
 
-div.top_head
-{
+@keyframes blink {
+  50% {
+      border-color: transparent;
+  }
+}
+.top_head {
+  min-height: 5vh; /* Allows flexibility for content */
   display: flex;
-  flex-direction: row;
-  color:white;
-  height: 5vh;
-  padding:2px;
-  width: 100vw;
-  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 3%; /* Reduced padding to fit within 5vh */
+  background: linear-gradient(45deg, #000000, #333);
+  color: white;
+  flex-wrap: nowrap; /* Prevents elements from stacking */
+  overflow: hidden;
 }
 
-div.top_head>a{
- margin-left:25px;
+.top_head .text {
+  font-size: 0.9rem; /* Reduced to fit */
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  max-width: 25%px; /* Prevents overflow */
+  text-align:left;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
 }
+.social-icons {
+  display: flex;
+  gap: 8px; /* Reduce spacing between icons */
+  right: 120px; /* Move left to keep space for the Donate button */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-right:500px;
+}
+
+.social-icons a {
+  margin: 0; /* Remove margin from individual links */
+}
+
+.top_head >a {
+  text-decoration: none;
+  margin: 0 5px;
+  display: flex;
+}
+
+.top_head a {
+  margin: 0 5px;
+  color: rgb(0, 47, 255);
+  font-size: 1.2rem; /* Reduced for better spacing */
+}
+
+.top_head a:hover {
+  transform: scale(1.1);
+  color: #FFD700;
+}
+
+.top_head button {
+  background-color: #ff4500;
+  border-radius: 15px;
+  color: white;
+  padding: 6px 12px; /* Adjusted for height */
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.top_head button:hover {
+  background: #e63900;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .top_head {
+      flex-direction: row;
+      flex-wrap: wrap; /* Allows stacking if needed */
+      text-align: center;
+      padding: 3px 2%;
+  }
+  .top_head .text {
+      font-size: 0.6rem;
+  }
+  .top_head a {
+      font-size: 1rem;
+  }
+  .top_head button {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+  }
+}
+
 
 div#backImage {
   position: relative;
