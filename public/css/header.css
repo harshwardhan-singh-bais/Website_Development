@@ -44,8 +44,6 @@ nav#siteHead {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* background: rgb(28, 121, 218);
-    background: linear-gradient(277deg, rgba(28, 121, 218, 0.7170517865349264) 0%, rgba(136, 194, 240, 0.8094887613248425) 46%, rgba(72, 164, 250, 0.7366596296721813) 100%); */
     background: rgb(0, 0, 0);
         background: linear-gradient(277deg, rgba(0, 0, 0, 0.3248949237898284) 0%, rgba(0, 0, 0, 0.26887251482624297) 100%);
 }
@@ -72,9 +70,17 @@ nav#siteHead>a>img {
 
 nav#siteHead>a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: rgb(255, 255, 255);
     font-weight: 500;
     font-size: 2.5vh;
+}
+
+nav#siteHead>a:hover {
+    border-bottom: 1vh solid white;
+    /* animation: appear_border 1s; */
 }
 
 nav#siteHead>a.header_logo {
@@ -93,6 +99,7 @@ nav#site_head>a>img {
 }
 
 nav#site_head>a {
+    
     margin: 0px 1.5vw;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.683);
@@ -111,6 +118,11 @@ nav#site_head>a.header_logo {
     background-color: aliceblue;
 }
 
+nav#siteHead>a.home_icon:hover
+{
+    border: none;
+}
+
 nav#site_head>a>img.header_logo {
     height: 8vh;
     width: 4vw;
@@ -118,18 +130,70 @@ nav#site_head>a>img.header_logo {
 
 
 
-.Institute_dropDown {
+
+/* Adding dropdowns to the header */
+.dropDown {
     display: none;
-    height: 50vh;
-    width: 100%;
+    height: 60vh;
+    width: 85vw;
     position: fixed;
-    top: 19vh;
-    left: 0;                
+    top: 24.5vh;
+    left: 7.25vw;                
     z-index: 1000;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
-a.Institute:hover + .Institute_dropDown,
-.Institute_dropDown:hover {
+a.Institute:hover + .dropDown,
+.dropDown:hover {
     display: block;
+    animation: dropDown_appear 0.25s ease-in-out;
 }
+
+
+a.Department:hover + .dropDown,
+.dropDown:hover {
+    display: block;
+    animation: dropDown_appear 0.25s ease-in-out;
+}
+
+
+
+
+
+/* animations */
+@keyframes appear_border {
+    from {
+            border-bottom: 0px;
+    }
+    
+        to {
+            border-bottom: 30px;
+    }
+}
+
+
+@keyframes dropDown_appear {
+    from {
+            /* opacity: 0; */
+            height: 0px;
+        }
+    
+        to {
+            /* opacity: 1; */
+            height: 60vh;
+        }
+}
+
+@keyframes dropDown_disappear {
+    from {
+            transform: translateY(0);
+            height: 65vh;
+        }
+    
+        to {
+            transform: translateY(20px);
+            height: 0vh;                     
+        }
+} 
