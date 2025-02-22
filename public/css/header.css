@@ -10,7 +10,7 @@ div#college_name {
     width: 85vw;
 }
 
-div#college_name .college_logo>a>img {
+div#college_name .college_header>a>img {
     height: 10vh;
     width: 7vw;
     margin-right: 1.25vw;
